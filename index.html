@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Breakup Triage — a self-guided 35-day protocol for the month after a breakup</title>
+<meta name="description" content="Breakup Triage is a self-guided 35-day protocol: seven days of acute triage, then 28 days of rebuilding. One short reading, one audio track, and one concrete task a day. Day 1 is free.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#1a2124">
+<link rel="canonical" href="https://breakuptriage.com/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Breakup Triage">
+<meta property="og:title" content="Breakup Triage — stop the breakup spiral">
+<meta property="og:description" content="A self-guided 35-day protocol: 7 days of acute triage, 28 days of rebuilding. One short reading, one audio track, one concrete task a day.">
+<meta property="og:url" content="https://breakuptriage.github.io/">
+<meta property="og:image" content="https://breakuptriage.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Breakup Triage — stop the breakup spiral">
+<meta name="twitter:description" content="A self-guided 35-day protocol: 7 days of acute triage, 28 days of rebuilding.">
+<meta name="twitter:image" content="https://breakuptriage.github.io/og.png">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --fg:oklch(0.9349 0.0115 84.58);
+  --bg:oklch(0.2468 0.0127 233.05);
+  --card:oklch(0.2773 0.0157 224.17);
+  --muted:oklch(0.6956 0.014 184.92);
+  --dim:oklch(0.5723 0.0146 184.77);
+  --border:color-mix(in oklab,var(--fg) 13%,transparent);
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Songti SC",serif;
+}
+html{background:#1a2124;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  color:var(--fg);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  background-color:#1a2124;
+  background-image:
+    radial-gradient(92% 52% at 100% -8%,rgba(74,34,4,.55) 0%,rgba(74,34,4,0) 62%),
+    radial-gradient(85% 58% at 2% 95%,rgba(16,56,70,.46) 0%,rgba(16,56,70,0) 63%),
+    linear-gradient(195deg,#20292b 0%,#2d3537 45%,#1a2124 100%);
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--fg);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:16px;top:16px;z-index:9;background:var(--fg);color:#20292b;padding:10px 16px;border-radius:2px;text-decoration:none;font-size:14px}
+.wrap{width:100%;max-width:744px;margin:0 auto;padding-left:24px;padding-right:24px}
+
+/* top bar */
+.bar{border-bottom:1px solid var(--border)}
+.bar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px}
+.mark{margin:0;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--fg);text-decoration:none}
+.bar-link{font-size:12.5px;color:var(--dim);text-decoration:none}
+.bar-link:hover{color:var(--fg)}
+
+/* hero */
+.hero{padding-top:72px;padding-bottom:72px;text-align:center}
+@media(min-width:640px){.hero{padding-top:112px;padding-bottom:104px}}
+.eyebrow{margin:0 0 22px;font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim)}
+h1{margin:0 auto;max-width:660px;font-family:var(--serif);font-weight:400;font-size:clamp(38px,8.2vw,68px);line-height:1.05;letter-spacing:-.012em;text-wrap:balance}
+.lede{max-width:520px;margin:24px auto 0;font-size:16.5px;line-height:1.75;color:var(--muted);text-wrap:balance}
+.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;border-radius:2px;background:var(--fg);color:#20292b;font-size:15px;text-decoration:none;transition:opacity .18s ease}
+.btn:hover{opacity:.9}
+.btn-ghost{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:2px;border:1px solid var(--border);color:var(--muted);font-size:15px;text-decoration:none;transition:color .18s ease,border-color .18s ease}
+.btn-ghost:hover{color:var(--fg);border-color:color-mix(in oklab,var(--fg) 30%,transparent)}
+.micro{margin:16px 0 0;font-size:12.5px;color:var(--dim)}
+
+/* fact strip */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.facts div{padding:24px 10px;text-align:center;border-left:1px solid var(--border)}
+.facts div:first-child{border-left:0}
+.facts b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.2}
+.facts span{display:block;margin-top:6px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);line-height:1.5;text-wrap:balance}
+@media(max-width:560px){
+  .facts{grid-template-columns:1fr}
+  .facts div{border-left:0;border-top:1px solid var(--border);padding:18px 10px}
+  .facts div:first-child{border-top:0}
+}
+
+/* sections */
+.band{border-top:1px solid var(--border);padding-top:64px;padding-bottom:64px}
+@media(min-width:640px){.band{padding-top:96px;padding-bottom:96px}}
+.head{text-align:center}
+h2{margin:0 auto;max-width:580px;font-family:var(--serif);font-weight:400;font-size:clamp(26px,4.6vw,34px);line-height:1.25;letter-spacing:-.008em;text-wrap:balance}
+.section-lede{max-width:520px;margin:18px auto 0;font-size:14.5px;line-height:1.75;color:var(--muted);text-align:center}
+
+/* pillars */
+.grid2{display:grid;gap:34px;margin-top:44px}
+@media(min-width:640px){.grid2{grid-template-columns:1fr 1fr;gap:36px 48px}}
+.item{border-top:1px solid var(--border);padding-top:18px}
+.num{margin:0;font-size:10px;letter-spacing:.22em;color:var(--dim)}
+.item h3{margin:8px 0 8px;font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.3}
+.item p{margin:0;font-size:14px;line-height:1.7;color:var(--muted)}
+
+/* timeline */
+.timeline{position:relative;max-width:600px;margin:46px auto 0;padding:0 0 0 32px;list-style:none}
+.timeline::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:1px;background:var(--border)}
+.timeline li{position:relative;padding-bottom:32px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-32px;top:7px;width:9px;height:9px;margin-left:-4px;border-radius:50%;border:1px solid var(--dim);background:#252e30}
+.timeline li:first-child::before{background:var(--fg);border-color:var(--fg)}
+.t-label{margin:0;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.t-blurb{margin:5px 0 0;font-family:var(--serif);font-size:20px;line-height:1.32}
+
+/* boundaries */
+.boundaries{display:grid;gap:40px;margin-top:42px}
+@media(min-width:640px){.boundaries{grid-template-columns:1fr 1fr;gap:56px}}
+.boundaries h3{margin:0 0 16px;padding-bottom:12px;border-bottom:1px solid var(--border);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.boundaries ul{margin:0;padding:0;list-style:none}
+.boundaries li{position:relative;margin:0 0 12px;padding-left:20px;font-size:15px;line-height:1.55}
+.boundaries li:last-child{margin-bottom:0}
+.boundaries li::before{content:"—";position:absolute;left:0;color:var(--dim)}
+.boundaries .not li{color:var(--muted)}
+
+/* origin */
+.origin{max-width:560px;margin:0 auto}
+.origin p{margin:0;font-size:16px;line-height:1.8;color:var(--muted)}
+.sign{margin-top:24px;font-size:13px;color:var(--dim)}
+.link{color:var(--muted);text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:4px;transition:color .18s ease}
+.link:hover{color:var(--fg)}
+.origin .more{margin-top:26px;font-size:13.5px}
+
+/* faq */
+.faq{max-width:640px;margin:42px auto 0}
+details{border-bottom:1px solid var(--border)}
+details:first-of-type{border-top:1px solid var(--border)}
+summary{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:22px 0;cursor:pointer;list-style:none;font-family:var(--serif);font-size:19px;line-height:1.35}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex:none;font-family:var(--sans);font-size:18px;line-height:1.4;color:var(--dim);transition:transform .2s ease}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 22px;font-size:14.5px;line-height:1.75;color:var(--muted)}
+
+/* crisis */
+.crisis{border:1px solid var(--border);border-radius:8px;background:color-mix(in oklab,var(--card) 62%,transparent);padding:28px}
+.crisis h2{margin:0;text-align:left;font-family:var(--sans);font-size:19px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.crisis p{margin:12px 0 0;font-size:14px;line-height:1.7;color:var(--muted)}
+.crisis a{color:var(--fg);text-decoration:underline;text-decoration-color:color-mix(in oklab,var(--fg) 35%,transparent);text-underline-offset:3px}
+.crisis a:hover{text-decoration-color:var(--fg)}
+.crisis ul{margin:16px 0 0;padding:0;list-style:none;font-size:14px;line-height:1.6}
+.crisis li{margin-bottom:8px}
+.crisis li:last-child{margin-bottom:0}
+
+/* closing */
+.closing{text-align:center}
+.closing .lede{font-size:15.5px}
+
+/* footer */
+footer{border-top:1px solid var(--border);padding:40px 0 64px;font-size:12.5px;line-height:1.7;color:var(--dim)}
+.foot-links{display:flex;flex-wrap:wrap;gap:10px 18px;margin:0 0 18px;padding:0;list-style:none}
+.foot-links a{color:var(--muted);text-decoration:none}
+.foot-links a:hover{color:var(--fg)}
+footer p{margin:0 0 8px}
+footer p:last-child{margin-bottom:0}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <div class="wrap bar-inner">
+    <a class="mark" href="https://breakuptriage.com/">Breakup Triage</a>
+    <a class="bar-link" href="https://breakuptriage.com/">breakuptriage.com &nearr;</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap">
+    <p class="eyebrow">7-DAY ACUTE TRIAGE &middot; 28-DAY REBUILD</p>
+    <h1>A self-guided protocol to stop the breakup spiral.</h1>
+    <p class="lede">35 days of structured audio, text, and one concrete daily task&mdash;built for people who want a practical system, not vague advice.</p>
+    <div class="actions">
+      <a class="btn" href="https://breakuptriage.com/protocol/1">Read Day 1 for free</a>
+      <a class="btn-ghost" href="#structure">See the 35 days</a>
+    </div>
+    <p class="micro">Day 1 needs no account.</p>
+  </section>
+
+  <div class="wrap">
+    <div class="facts">
+      <div><b>~15 min</b><span>per lesson &mdash; audio + text</span></div>
+      <div><b>5&ndash;20 min</b><span>the task for the day</span></div>
+      <div><b>No streaks</b><span>nothing expires</span></div>
+    </div>
+  </div>
+
+  <section class="band" id="how">
+    <div class="wrap">
+      <p class="eyebrow" style="text-align:center">What makes it different</p>
+      <div class="grid2">
+        <div class="item">
+          <p class="num">01</p>
+          <h3>Guided grounding, not vague advice</h3>
+          <p>Start each lesson with a short physical reset to calm the chest-tightness and interrupt the 2 a.m. spiral.</p>
+        </div>
+        <div class="item">
+          <p class="num">02</p>
+          <h3>Paced day by day</h3>
+          <p>Lessons unlock one step at a time (7 days to stop the bleeding, 28 days to rebuild) so you never get overwhelmed.</p>
+        </div>
+        <div class="item">
+          <p class="num">03</p>
+          <h3>Actionable daily tasks</h3>
+          <p>Every lesson ends with 1&ndash;2 concrete checklists or trigger logs you complete and save&mdash;real proof you&rsquo;re moving forward.</p>
+        </div>
+        <div class="item">
+          <p class="num">04</p>
+          <h3>From survival to rebuilding</h3>
+          <p>Move past no-contact survival into restoring sleep, daily rhythm, self-respect, and clear boundaries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="structure">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">How it works</p>
+        <h2>Seven days of acute triage, then 28 days of rebuilding</h2>
+        <p class="section-lede">Work through each stage at your own pace. There&rsquo;s no need to rush ahead.</p>
+      </div>
+      <ol class="timeline">
+        <li>
+          <p class="t-label">Part 1 &middot; Acute Triage (Days 1&ndash;7)</p>
+          <p class="t-blurb">Calm the physical ache, stop reaching for your phone, and break the 2 a.m. mental loop.</p>
+        </li>
+        <li>
+          <p class="t-label">Part 2.1 &middot; Reflect and Reset (Days 8&ndash;14)</p>
+          <p class="t-blurb">Clear emotional landmines, strip away the highlight reel, and see the relationship for what it really was.</p>
+        </li>
+        <li>
+          <p class="t-label">Part 2.2 &middot; Rebuild Confidence (Days 15&ndash;21)</p>
+          <p class="t-blurb">Small, daily manageable wins to reconnect with your worth and regain control of your attention.</p>
+        </li>
+        <li>
+          <p class="t-label">Part 2.3 &middot; Everyday Foundations (Days 22&ndash;28)</p>
+          <p class="t-blurb">Restore sleep, appetite, and body rhythms to rebuild the practical ground beneath your feet.</p>
+        </li>
+        <li>
+          <p class="t-label">Part 2.4 &middot; Looking Ahead (Days 29&ndash;35)</p>
+          <p class="t-blurb">Raise your standards, set unbreakable boundaries, and walk forward on your own terms.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" id="boundaries">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">What this is</p>
+        <h2>What this is, and what it is not</h2>
+      </div>
+      <div class="boundaries">
+        <div>
+          <h3>What this is</h3>
+          <ul>
+            <li>A fixed sequence you follow</li>
+            <li>7 + 28 days, one task a day</li>
+            <li>Something you can use at 2 a.m.</li>
+            <li>Plain, honest language</li>
+          </ul>
+        </div>
+        <div>
+          <h3>What this is not</h3>
+          <ul class="not">
+            <li>A manipulation guide to beg or scheme them back</li>
+            <li>Twelve weeks of inspiration</li>
+            <li>A magical cure</li>
+            <li>Relationship gossip</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="origin">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Why this exists</p>
+        <h2>Built out of necessity, not theory.</h2>
+      </div>
+      <div class="origin" style="margin-top:34px">
+        <p>I&rsquo;m an indie developer, not a therapist. A sudden breakup left me unable to eat or work for a month, and the advice I found online only made it worse. What actually helped was understanding the withdrawal mechanics and taking one small, concrete step a day. Breakup Triage is that structure turned into a protocol you can follow on your own.</p>
+        <p class="sign">&mdash; Kyle, indie developer</p>
+        <p class="more"><a class="link" href="https://breakuptriage.com/about">Read the full story &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="questions">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Questions</p>
+        <h2>What people ask first</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Will this make the breakup hurt less?</summary>
+          <p>No. Grief follows its own timeline, and this protocol can&rsquo;t make it disappear. It offers a little structure and practical support while you move through it.</p>
+        </details>
+        <details>
+          <summary>I still want my ex back. Should I still do this?</summary>
+          <p>Yes, and do it first. Whatever you decide later&mdash;whether to walk away for good or navigate future conversations&mdash;you need to decide from a grounded, clear, and self-respecting place, not from panic and withdrawal. When you aren&rsquo;t running on craving, you take back your own power.</p>
+        </details>
+        <details>
+          <summary>What if I miss a few days?</summary>
+          <p>Nothing expires, and you can pick up where you left off. There are no streaks to maintain or days to make up.</p>
+        </details>
+        <details>
+          <summary>How long is a lesson?</summary>
+          <p>Most audio lessons are about 15 minutes, with a short activity that usually takes 5 to 20 minutes. You can also read the lesson instead.</p>
+        </details>
+        <details>
+          <summary>Do I have to talk to anyone?</summary>
+          <p>No. No calls, no live sessions, no forums. Nobody watches you use it.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="help">
+    <div class="wrap">
+      <div class="crisis">
+        <h2>If you need help right now</h2>
+        <p>Breakup Triage is educational and is not a crisis service. If you are in immediate danger, thinking about harming yourself, or unable to keep yourself safe, please reach out now. These lines are free and confidential.</p>
+        <ul>
+          <li><a href="tel:988">US / Canada &mdash; call or text 988</a></li>
+          <li><a href="tel:116123">UK &mdash; call 116 123 (Samaritans)</a></li>
+          <li><a href="tel:12356">China &mdash; call 12356</a></li>
+          <li><a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer">Elsewhere &mdash; find a helpline near you</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band closing">
+    <div class="wrap">
+      <h2>Day 1 is free. Start tonight.</h2>
+      <p class="lede">Your next 7 days can look completely different from the loop you&rsquo;ve been trapped in. You don&rsquo;t have to figure out the rest of your life tonight&mdash;spend 15 minutes and let this structure steady your next 24 hours.</p>
+      <div class="actions">
+        <a class="btn" href="https://breakuptriage.com/protocol/1">Take the first step tonight &middot; Free</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="https://breakuptriage.com/">The protocol</a></li>
+      <li><a href="https://breakuptriage.com/about">About</a></li>
+      <li><a href="https://breakuptriage.com/pricing">Plans</a></li>
+      <li><a href="https://breakuptriage.com/blog">Field guides</a></li>
+      <li><a href="https://www.instagram.com/breakuptriage" rel="noopener noreferrer">Instagram</a></li>
+      <li><a href="https://www.tiktok.com/@breakuptriage" rel="noopener noreferrer">TikTok</a></li>
+    </ul>
+    <p>Breakup Triage is an independent educational publisher. This protocol isn&rsquo;t therapy and doesn&rsquo;t diagnose or treat mental health conditions.</p>
+    <p>This page is the project&rsquo;s public home. The protocol itself runs at <a class="link" href="https://breakuptriage.com/">breakuptriage.com</a>.</p>
+  </div>
+</footer>
+</body>
+</html>
